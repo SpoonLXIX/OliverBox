@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://n1xh1gbv3uws"]
+[gd_scene load_steps=3 format=3 uid="uid://n1xh1gbv3uws"]
 
 [ext_resource type="Texture2D" uid="uid://dm8x5gferpbml" path="res://icon.svg" id="1_wut1r"]
+[ext_resource type="Script" uid="uid://ch6yf4p8i5e1" path="res://host_button.gd" id="2_83s16"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -40,9 +41,12 @@ offset_right = 164.0
 offset_bottom = 484.0
 text = "Join"
 
-[node name="Button4" type="Button" parent="CanvasLayer"]
+[node name="HostButton" type="Button" parent="CanvasLayer"]
 offset_left = 60.0
 offset_top = 386.0
 offset_right = 165.0
 offset_bottom = 428.0
 text = "Host"
+script = ExtResource("2_83s16")
+
+[connection signal="pressed" from="CanvasLayer/HostButton" to="CanvasLayer/HostButton" method="_on_pressed"]
